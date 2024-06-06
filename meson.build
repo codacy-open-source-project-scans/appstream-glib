@@ -1,5 +1,5 @@
 project('appstream-glib', 'c',
-  version : '0.8.3',
+  version : '0.8.4',
   license : 'LGPL-2.1+',
   default_options : ['warning_level=1', 'c_std=c99'],
   meson_version : '>=0.46.0'
@@ -103,12 +103,6 @@ endif
 if get_option('dep11')
   yaml = dependency('yaml-0.1')
   conf.set('AS_BUILD_DEP11', 1)
-endif
-
-# support stemming of search tokens
-if get_option('stemmer')
-  stemmer = cc.find_library('stemmer')
-  conf.set('HAVE_LIBSTEMMER', 1)
 endif
 
 # use gperf for faster string -> enum matching
